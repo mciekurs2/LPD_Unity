@@ -29,9 +29,17 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
+    public static int logCount = 0;
+
+
+
+
     public bool Add(Item item)
     {
+        //logCount = items.Count;
         //items.Add(item);
+
+        
 
         if (!item.isDefaultItem)
         {
@@ -40,6 +48,8 @@ public class Inventory : MonoBehaviour
                 Debug.Log("Nav pietiekami daudz vietas");
                 return false;
             }
+
+            logCount++;
             items.Add(item);
 
             if (OnItemChangedCallBack != null)
@@ -56,6 +66,7 @@ public class Inventory : MonoBehaviour
     public void Remove(Item item)
     {
         Debug.Log("Pievienots invenory" + item.name);
+        logCount--;
         items.Remove(item);
 
         if (OnItemChangedCallBack != null)
