@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0019825706, g: 0.0014393326, b: 0.00043779876, a: 1}
+  m_IndirectSpecularColor: {r: 0.000017132423, g: 0.000000026305766, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1344,6 +1344,16 @@ Prefab:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 198260517930635872, guid: 89956e675b749204c8e10395ce2b5fb9,
+        type: 2}
+      propertyPath: randomSeed
+      value: 707636230
+      objectReference: {fileID: 0}
+    - target: {fileID: 198260517930635872, guid: 89956e675b749204c8e10395ce2b5fb9,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89956e675b749204c8e10395ce2b5fb9, type: 2}
   m_IsPrefabParent: 0
@@ -1760,7 +1770,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1373979482
+  randomSeed: -470124038
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6643,13 +6653,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2093044284}
-  m_LocalRotation: {x: 0.38586786, y: -0.5573993, z: 0.21542983, w: -0.70285285}
+  m_LocalRotation: {x: 0.46184948, y: -0.43519318, z: -0.5476905, w: -0.54528636}
   m_LocalPosition: {x: -6.12, y: 16.71, z: -3.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 197.593, y: -1174.864, z: -230.261}
+  m_LocalEulerAnglesHint: {x: 258.63202, y: -1269.135, z: -82.26199}
 --- !u!4 &2115768405 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 62fa28cbb204e4546a2ad5c1580ee188, type: 3}
