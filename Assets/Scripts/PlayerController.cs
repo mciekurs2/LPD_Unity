@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMotor))]
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
+
+
+    public Interactable focus;
 
     public LayerMask movementMask;
+
     Camera camera;
     PlayerMotor motor;
    
@@ -29,6 +34,8 @@ public class PlayerController : MonoBehaviour {
                 //Debug.Log("We hit " + hit.collider.name + " " + hit.point);
                 motor.MoveToPoint(hit.point);
 
+                RemoveFocus();
+
             }
 
         }
@@ -38,8 +45,16 @@ public class PlayerController : MonoBehaviour {
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 100, movementMask))
+            if (Physics.Raycast(ray, out hit, 100))
             {
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                //parbauda, vai patiesham atrast interactable
+                if (interactable != null)
+                {
+                    //uzstāda kaa focus objektu
+                    SetFocus(interactable);
+
+                }
 
                 //Debug.Log("We hit " + hit.collider.name + " " + hit.point);
                 //motor.MoveToPoint(hit.point);
@@ -49,4 +64,32 @@ public class PlayerController : MonoBehaviour {
         }
 
     }
+
+    void SetFocus(Interactable newFocus)
+    {
+        //deFocused ja jau eksistee iepriekshejais
+        if (newFocus != focus)
+        {
+            if (focus != null)
+            {
+               focus.OnDefocused();
+            }
+            focus = newFocus;
+            motor.FollowTarget(newFocus);
+        }
+
+        newFocus.OnFocused(transform);
+    }
+
+    void RemoveFocus()
+    {
+        if (focus != null)
+        {
+            focus.OnDefocused();
+        }
+
+        focus = null;
+        motor.StopFollowingTarget();
+    }
+
 }
