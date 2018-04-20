@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask movementMask;
 
-    Camera camera;
+    new Camera camera;
     PlayerMotor motor;
    
 
