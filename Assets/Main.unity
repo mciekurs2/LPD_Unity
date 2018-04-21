@@ -1770,7 +1770,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -470124038
+  randomSeed: 1665788882
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6429,6 +6429,7 @@ GameObject:
   - component: {fileID: 2044571138}
   - component: {fileID: 2044571137}
   - component: {fileID: 2044571136}
+  - component: {fileID: 2044571139}
   m_Layer: 0
   m_Name: modelBonfire (1)
   m_TagString: Untagged
@@ -6485,13 +6486,24 @@ Transform:
   m_PrefabParentObject: {fileID: 400122, guid: 477c195adbaf87c4d85c43a3112be67f, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2044571135}
-  m_LocalRotation: {x: -0.023249285, y: -0.030020583, z: -0.025332237, w: 0.9989577}
-  m_LocalPosition: {x: 9.47, y: 0.25, z: 10.53}
+  m_LocalRotation: {x: 0.0073002926, y: -0.030780977, z: -0.024402652, w: 0.99920154}
+  m_LocalPosition: {x: 9.468, y: 0.198, z: 10.529}
   m_LocalScale: {x: 1.45399, y: 1.45399, z: 1.45399}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -2.7500002, y: -3.3750002, z: -2.8240001}
+  m_LocalEulerAnglesHint: {x: 0.75000006, y: -3.5470002, z: -2.821}
+--- !u!114 &2044571139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2044571135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2966dd7a9496f2d46ad1a6b92d297e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2056082880
 GameObject:
   m_ObjectHideFlags: 0

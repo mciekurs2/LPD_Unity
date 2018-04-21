@@ -21,9 +21,6 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
-    public delegate void OnItemChanged();
-
-    public OnItemChanged OnItemChangedCallBack;
 
     public int space = 3;
 
@@ -51,11 +48,6 @@ public class Inventory : MonoBehaviour
 
             logCount++;
             items.Add(item);
-
-            if (OnItemChangedCallBack != null)
-            {
-                OnItemChangedCallBack.Invoke();
-            }
             
         }
 
@@ -63,18 +55,20 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void Remove(Item item)
+    public bool Remove(Item item)
     {
-        Debug.Log("Pievienots invenory" + item.name);
+
+        if (items.Count <= 0)
+        {
+            Debug.Log("Vairāk nav malkas");
+            return false;
+        }
+
+        Debug.Log("Pievienota malka " + item.name);
         logCount--;
         items.Remove(item);
 
-        if (OnItemChangedCallBack != null)
-        {
-            OnItemChangedCallBack.Invoke();
-        }
-
+        return true;
     }
-
 
 }
