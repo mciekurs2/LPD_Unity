@@ -19,10 +19,12 @@ public class LightTimer : MonoBehaviour
     {
         while (light.intensity != 0f) 
         {
-
-            light.intensity -= .005f;
+            light.intensity -= 0.01f;
             yield return new WaitForSeconds(0.5f);
         }
+
+        Debug.Log("Quit!!!");
+        Application.Quit();
     
     }
 

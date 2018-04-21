@@ -28,6 +28,8 @@ public class Inventory : MonoBehaviour
 
     public static int logCount = 0;
 
+    public static int totalLogCount = 18;
+
 
 
 
@@ -45,7 +47,7 @@ public class Inventory : MonoBehaviour
                 Debug.Log("Nav pietiekami daudz vietas");
                 return false;
             }
-
+            totalLogCount--;
             logCount++;
             items.Add(item);
             
